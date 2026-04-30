@@ -237,39 +237,28 @@ Bạn được giao thiết kế cấu trúc HTML cho trang **chi tiết sản p
 ## Phần C2: Một đồng nghiệp nói: "Dùng <div> cho mọi thứ rồi thêm class là được, không cần semantic HTML. Tốn thời gian học thêm thẻ mới."
 
 Viết 1 đoạn phản biện (200-300 từ), phải bao gồm:
-
 Luận điểm của đồng nghiệp có vẻ tiết kiệm thời gian ban đầu nhưng lại gây ra nợ kỹ thuật lớn về sau. Việc sử dụng Semantic HTML là bắt buộc ở các dự án chuẩn vì hai lý do kỹ thuật cốt lõi:
-
 Thứ nhất là SEO (Tối ưu hóa công cụ tìm kiếm). Các crawler của Google không có "mắt" để nhìn thấy các class CSS đẹp đẽ; chúng phân tích cấu trúc DOM. Khi dùng <article> hay <h1>, ta báo hiệu cho bot biết đâu là nội dung trọng tâm. Nếu dùng toàn <div>, mọi thông tin có giá trị ngang nhau, làm giảm thứ hạng tìm kiếm của trang web.
 Thứ hai là Accessibility (Khả năng truy cập). Ví dụ, những người khiếm thị sử dụng Screen Reader có các phím tắt để nhảy từ <header> sang <main> hoặc nhảy qua các <nav>. Nếu chúng ta lạm dụng <div>, Screen Reader sẽ đọc mọi thứ như một khối văn bản phẳng, khiến việc điều hướng trở thành cực hình.
-
 Tuy nhiên, <div> không hoàn toàn vô dụng. Một trường hợp thực tế bắt buộc phải dùng <div> là tạo các wrapper (khối bọc) phi ngữ nghĩa nhằm mục đích thuần túy về layout và styling. Ví dụ: khi bạn cần một container bọc ngoài thẻ <main> để set display: flex; max-width: 1200px; margin: auto; giới hạn chiều rộng của giao diện, thẻ <div> lúc này là lựa chọn hoàn hảo nhất vì nó không làm nhiễu cấu trúc semantic của trang.
 
-# Phần B
+## Phần B
 
-## Phần B3:
+### Phần B3:
 
 Lỗi 1: Dòng 1 — Thẻ khai báo DOCTYPE viết sai cú pháp và thiếu định dạng tài liệu — Cần sửa thành <!DOCTYPE html>.
-
 Lỗi 2: Dòng 3 — Thẻ <title> bị thiếu thẻ đóng tương ứng — Cần thêm </title> vào ngay sau chữ "Trang web".
-
 Lỗi 3: Dòng 4 — Giá trị của thuộc tính charset viết sai chuẩn — Cần sửa "utf8" thành "UTF-8".
-
 Lỗi 4: Dòng 6 — Thẻ đóng của tiêu đề chính bị viết sai cú pháp (thiếu dấu gạch chéo) — Cần sửa <h1> ở cuối dòng thành </h1>.
-
 Lỗi 5: Dòng 10 — Thẻ đóng của liên kết "Trang chủ" bị sai cú pháp (thiếu dấu gạch chéo) — Cần sửa <a> ở cuối dòng thành </a>.
-
 Lỗi 6: Dòng 17 — Thuộc tính src thiếu dấu ngoặc kép bọc giá trị và thẻ <img> đang thiếu thuộc tính bắt buộc alt — Cần sửa thành <img src="iphone.jpg" alt="iPhone 16 Pro">.
-
 Lỗi 7: Dòng 19 — Lỗi lồng thẻ chéo nhau (Nesting error). Mở thẻ <b> bên trong thẻ <p> nhưng lại đóng </p> trước khi đóng </b> — Cần đảo lại thứ tự đóng thẻ cho đúng: <p>Giá: <b>25.990.000đ</b></p>.
-
 Lỗi 8: Dòng 24 — Bảng dữ liệu thiếu cấu trúc semantic (<thead>, <tbody>) và đang dùng thẻ <td> cho các ô tiêu đề thay vì thẻ <th> — Cần bọc hàng đầu tiên bằng <thead> và đổi <td> thành <th>; sau đó bọc hàng thứ hai bằng <tbody>.
-
 Lỗi 9: Dòng 36 — Sử dụng đến 2 thẻ <main> trong cùng một trang web (theo chuẩn HTML5 thì mỗi trang chỉ có 1 thẻ <main> duy nhất) — Cần đổi thẻ <main> thứ hai (đang bọc chữ "Sidebar content") thành thẻ <aside>.
-
 Lỗi 10: Dòng 41 — Thẻ <p> ở phần chân trang bị thiếu thẻ đóng — Cần thêm </p> vào cuối dòng chữ "Copyright 2026".
 
 ## Phần B4: Phân tích shopee
+
 ### I
 1. Thẻ Senmatic header
 ![alt text](<screenshots/Senmatic header.png>)
@@ -281,7 +270,9 @@ Lỗi 10: Dòng 41 — Thẻ <p> ở phần chân trang bị thiếu thẻ đón
 ![alt text](<screenshots/Senmatic footer.png>)
 
 ### II
+
 Không tìm thấy thẻ table 
 
 ### III
+
 em tìm được thẻ form nhưng mà nó không phải form input nên không gắn ạ!
