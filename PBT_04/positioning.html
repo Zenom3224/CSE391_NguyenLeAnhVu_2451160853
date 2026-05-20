@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Playground</title>
+    <link rel="stylesheet" href="positioning.css">
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo">ShopLayout</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="page-layout">
+        <aside class="sidebar">
+            <h2>Sticky Sidebar</h2>
+            <p>Sidebar này dùng <strong>position: sticky</strong> và sẽ dính lại khi scroll.</p>
+            <ul>
+                <li>Điện thoại</li>
+                <li>Laptop</li>
+                <li>Phụ kiện</li>
+                <li>Khuyến mãi</li>
+            </ul>
+        </aside>
+
+        <section class="content" id="products">
+            <h1>Positioning Playground</h1>
+            <p class="intro">Demo fixed header, sticky sidebar, absolute badge và fixed scroll button.</p>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <span class="hot-badge">HOT</span>
+                    <div class="product-image">Phone</div>
+                    <h3>iPhone 16</h3>
+                    <p>Sản phẩm nổi bật với badge HOT dùng position absolute.</p>
+                    <button>Mua ngay</button>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">Laptop</div>
+                    <h3>MacBook Pro</h3>
+                    <p>Card sản phẩm dùng position relative để badge có thể bám theo card.</p>
+                    <button>Mua ngay</button>
+                </article>
+
+                <article class="product-card">
+                    <span class="hot-badge">HOT</span>
+                    <div class="product-image">Watch</div>
+                    <h3>Smart Watch</h3>
+                    <p>Ví dụ khác về badge nằm ở góc phải trên card.</p>
+                    <button>Mua ngay</button>
+                </article>
+            </div>
+
+            <div class="long-content">
+                <h2>Nội dung dài để kiểm tra scroll</h2>
+                <p>Cuộn trang xuống để thấy header vẫn cố định ở trên cùng và sidebar vẫn dính dưới header.</p>
+                <p>Position fixed thường dùng cho các thành phần luôn xuất hiện trên màn hình như header, nút chat, nút lên đầu trang.</p>
+                <p>Position sticky thường dùng cho sidebar hoặc thanh menu phụ cần bám theo khi người dùng đọc nội dung dài.</p>
+                <p>Position absolute phù hợp khi cần đặt một phần tử ở vị trí chính xác bên trong phần tử cha.</p>
+                <p>Position relative thường dùng để tạo mốc cho absolute hoặc dịch nhẹ phần tử mà vẫn giữ chỗ trong layout.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a justo euismod, maximus velit et, viverra arcu.</p>
+                <p>Sed tempor lorem at lacus finibus, vitae pulvinar libero luctus. Integer euismod dui sed risus ullamcorper.</p>
+                <p>Aliquam erat volutpat. Maecenas ac massa in leo pulvinar tincidunt vel at dolor.</p>
+            </div>
+        </section>
+    </main>
+
+    <a class="scroll-top" href="#top" aria-label="Scroll to top">↑</a>
+</body>
+</html>
