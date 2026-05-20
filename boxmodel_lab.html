@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Lab</title>
+    <link rel="stylesheet" href="boxmodel.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Box Model Lab</h1>
+        <p>So sánh content-box, border-box và layout 3 cột.</p>
+    </header>
+
+    <main>
+        <section class="lab-section">
+            <h2>Phần 1 — Content-box vs Border-box</h2>
+            <p>Cả hai hộp đều có width: 300px, padding: 20px, border: 5px solid.</p>
+
+            <div class="box-row">
+                <div class="demo-box content-box-demo">
+                    <h3>Hộp 1</h3>
+                    <p>box-sizing: content-box</p>
+                    <p>Rộng thật: 300 + 40 + 10 = 350px</p>
+                </div>
+
+                <div class="demo-box border-box-demo">
+                    <h3>Hộp 2</h3>
+                    <p>box-sizing: border-box</p>
+                    <p>Rộng thật: 300px</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lab-section">
+            <h2>Demo Margin Collapse</h2>
+            <p>Box A có margin-bottom: 25px. Box B có margin-top: 40px. Khoảng cách thực tế là 40px.</p>
+            <div class="margin-demo box-a">Box A — margin-bottom: 25px</div>
+            <div class="margin-demo box-b">Box B — margin-top: 40px</div>
+        </section>
+
+        <section class="lab-section">
+            <h2>Phần 2 — Layout 3 cột không dùng border-box</h2>
+            <p>Layout này bị vượt 1000px vì padding bị cộng thêm vào width.</p>
+            <div class="three-column-container broken-layout">
+                <aside class="left-sidebar">Sidebar 250px + padding</aside>
+                <article class="main-content">Content 500px + padding</article>
+                <aside class="right-ads">Ads 250px + padding</aside>
+            </div>
+        </section>
+
+        <section class="lab-section">
+            <h2>Phần 2 — Layout 3 cột dùng border-box</h2>
+            <p>Layout này vừa đúng 1000px vì width đã bao gồm padding.</p>
+            <div class="three-column-container fixed-layout">
+                <aside class="left-sidebar">Sidebar 250px</aside>
+                <article class="main-content">Content 500px</article>
+                <aside class="right-ads">Ads 250px</aside>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
