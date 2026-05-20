@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .top-bar {
+            padding: 20px;
+            border-radius: 10px;
+            background: #222;
+            color: white;
+        }
+
+        nav a {
+            display: inline-block;
+            margin-right: 12px;
+            color: #cfe8ff;
+            text-decoration: none;
+        }
+
+        nav a.active {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 16px;
+            margin-top: 16px;
+            border-radius: 8px;
+        }
+
+        .featured {
+            border-color: #0d6efd;
+            background: #eef5ff;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #d63384;
+        }
+
+        .answer-box {
+            margin-top: 24px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-left: 5px solid #0d6efd;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>Kiểm chứng CSS Selectors</h1>
+
+        <div id="app">
+            <header class="top-bar dark">
+                <h1>ShopTLU</h1>
+                <nav>
+                    <a href="/" class="active">Home</a>
+                    <a href="/products">Products</a>
+                    <a href="/about">About</a>
+                </nav>
+            </header>
+            <main>
+                <article class="product">
+                    <h2>iPhone 16</h2>
+                    <p class="price">25.990.000đ</p>
+                    <p>Mô tả sản phẩm...</p>
+                </article>
+                <article class="product featured">
+                    <h2>MacBook Pro</h2>
+                    <p class="price">45.990.000đ</p>
+                    <p>Mô tả sản phẩm...</p>
+                </article>
+            </main>
+        </div>
+
+        <section class="answer-box">
+            <h2>Kết quả dự đoán</h2>
+            <ol>
+                <li><code>h1</code>: ShopTLU</li>
+                <li><code>.price</code>: 25.990.000đ, 45.990.000đ</li>
+                <li><code>#app header</code>: header chứa ShopTLU, Home, Products, About</li>
+                <li><code>nav a:first-child</code>: Home</li>
+                <li><code>.product.featured h2</code>: MacBook Pro</li>
+                <li><code>article &gt; p</code>: các thẻ p là con trực tiếp của article</li>
+                <li><code>a[href="/"]</code>: Home</li>
+                <li><code>.top-bar.dark h1</code>: ShopTLU</li>
+            </ol>
+        </section>
+    </div>
+</body>
+</html>
