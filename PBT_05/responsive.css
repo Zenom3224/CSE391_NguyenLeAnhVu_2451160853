@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #222;
+}
+
+.header {
+    background: #1f2937;
+    color: white;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hamburger {
+    display: block;
+    font-size: 24px;
+    background: none;
+    color: white;
+    border: 0;
+}
+
+.menu {
+    display: none;
+}
+
+.page-layout {
+    padding: 12px;
+}
+
+.sidebar,
+.ads {
+    display: none;
+}
+
+.product-area h1 {
+    font-size: 24px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 10px 0 6px;
+}
+
+.card p {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.card button {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #111827;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .page-layout {
+        padding: 20px;
+    }
+
+    .sidebar {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        background: white;
+        border: 1px solid #ddd;
+        padding: 12px;
+        margin-bottom: 16px;
+    }
+
+    .sidebar label {
+        display: inline-block;
+    }
+
+    .product-area h1 {
+        font-size: 28px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .header {
+        padding: 18px 40px;
+    }
+
+    .page-layout {
+        display: grid;
+        grid-template-columns: 180px 1fr 180px;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .sidebar {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .sidebar label {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .ads {
+        display: block;
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        padding: 12px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .product-area h1 {
+        font-size: 32px;
+    }
+}
