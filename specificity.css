@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f6fb;
+    color: #222;
+}
+
+.container {
+    width: 800px;
+    margin: 40px auto;
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+#demo {
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px;
+    border: 3px solid currentColor;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* 1. Specificity: (0,0,1) */
+p {
+    color: black;
+}
+
+/* 2. Specificity: (0,1,0) */
+.text {
+    color: blue;
+}
+
+/* 3. Specificity: (0,1,0) */
+.highlight {
+    color: green;
+}
+
+/* 4. Specificity: (0,1,1) */
+p.text {
+    color: orange;
+}
+
+/* 5. Specificity: (0,2,0) */
+.text.highlight {
+    color: purple;
+}
+
+/* 6. Specificity: (0,2,0) */
+.card .highlight {
+    color: brown;
+}
+
+/* 7. Specificity: (0,2,1) */
+section .text.highlight {
+    color: teal;
+}
+
+/* 8. Specificity: (0,4,0) */
+.container .card .text.highlight {
+    color: deeppink;
+}
+
+/* 9. Specificity: (1,0,0) */
+#demo {
+    color: red;
+}
+
+/* 10. Specificity: (1,2,1) */
+main #demo.text.highlight {
+    color: crimson;
+}
+
+.note {
+    color: #555;
+    font-size: 16px;
+}
