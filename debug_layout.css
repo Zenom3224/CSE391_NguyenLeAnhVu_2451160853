@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f6fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+.page-header {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    padding: 28px;
+}
+
+main {
+    width: 1100px;
+    margin: 30px auto;
+}
+
+.demo-section {
+    background-color: white;
+    padding: 24px;
+    margin-bottom: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    border: 3px dashed #333;
+    background-color: #fff;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #e9ecef;
+    min-height: 110px;
+}
+
+.content {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #dbeafe;
+    min-height: 110px;
+}
+
+.broken-example {
+    background-color: #fff1f2;
+}
+
+.fix-border-box {
+    background-color: #f0fff4;
+}
+
+.fix-border-box .sidebar,
+.fix-border-box .content {
+    box-sizing: border-box;
+}
+
+.fix-content-box {
+    background-color: #f8f9ff;
+}
+
+.fix-content-box .sidebar {
+    width: 258px;
+}
+
+.fix-content-box .content {
+    width: 598px;
+}

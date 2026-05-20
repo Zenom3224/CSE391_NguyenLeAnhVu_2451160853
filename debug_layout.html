@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug CSS Layout</title>
+    <link rel="stylesheet" href="debug_layout.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Debug CSS Layout</h1>
+        <p>Chứng minh layout bị vỡ và 2 cách sửa.</p>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Layout ban đầu bị vỡ</h2>
+            <p>Tổng chiều rộng thực tế: 342px + 722px = 1064px &gt; 960px.</p>
+            <div class="container broken-example clearfix">
+                <aside class="sidebar">Sidebar ban đầu</aside>
+                <article class="content">Content ban đầu bị đẩy xuống vì không đủ chỗ.</article>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Cách sửa 1 — Dùng border-box</h2>
+            <p>Width 300px và 660px đã bao gồm padding + border, tổng đúng 960px.</p>
+            <div class="container fix-border-box clearfix">
+                <aside class="sidebar">Sidebar 300px</aside>
+                <article class="content">Content 660px</article>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Cách sửa 2 — Không dùng border-box</h2>
+            <p>Giảm width content bên trong: sidebar 258px, content 598px.</p>
+            <div class="container fix-content-box clearfix">
+                <aside class="sidebar">Sidebar: 258 + 40 + 2 = 300px</aside>
+                <article class="content">Content: 598 + 60 + 2 = 660px</article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
