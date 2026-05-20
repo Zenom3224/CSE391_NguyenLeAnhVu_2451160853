@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Flexbox — Trước và Sau</title>
+    <link rel="stylesheet" href="debug_flexbox.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Debug Flexbox — Trước và Sau</h1>
+        <p>Ảnh chụp giao diện web minh họa lỗi và cách sửa bằng Flexbox</p>
+    </header>
+
+    <main class="page-wrapper">
+        <section class="debug-card">
+            <h2>Lỗi 1: Cards không đều chiều cao — nút Mua bị lệch</h2>
+
+            <div class="two-columns">
+                <div class="before-area">
+                    <h3 class="label before">Trước</h3>
+                    <div class="card-row bad-card-row">
+                        <article class="product-card short-card">
+                            <div class="fake-img">A</div>
+                            <h4>Card ngắn</h4>
+                            <p>Nội dung ngắn.</p>
+                            <button>Mua</button>
+                        </article>
+
+                        <article class="product-card tall-card">
+                            <div class="fake-img">B</div>
+                            <h4>Card dài</h4>
+                            <p>Nội dung dài hơn làm nút bị nhảy xuống thấp hơn.</p>
+                            <button>Mua</button>
+                        </article>
+
+                        <article class="product-card medium-card">
+                            <div class="fake-img">C</div>
+                            <h4>Card vừa</h4>
+                            <p>Nội dung vừa phải.</p>
+                            <button>Mua</button>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="after-area">
+                    <h3 class="label after">Sau</h3>
+                    <div class="card-row fixed-card-row">
+                        <article class="product-card">
+                            <div class="fake-img">A</div>
+                            <h4>Card ngắn</h4>
+                            <p>Nội dung ngắn.</p>
+                            <button>Mua</button>
+                        </article>
+
+                        <article class="product-card">
+                            <div class="fake-img">B</div>
+                            <h4>Card dài</h4>
+                            <p>Dù nội dung dài hơn, nút vẫn dính đáy.</p>
+                            <button>Mua</button>
+                        </article>
+
+                        <article class="product-card">
+                            <div class="fake-img">C</div>
+                            <h4>Card vừa</h4>
+                            <p>Nội dung vừa phải.</p>
+                            <button>Mua</button>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="debug-card">
+            <h2>Lỗi 2: Hero chưa căn giữa cả ngang và dọc</h2>
+
+            <div class="two-columns">
+                <div>
+                    <h3 class="label before">Trước</h3>
+                    <div class="hero-box bad-hero">
+                        <div class="hero-content">Dính góc trái trên</div>
+                    </div>
+                    <p class="note">Sửa bằng: justify-content: center; align-items: center;</p>
+                </div>
+
+                <div>
+                    <h3 class="label after">Sau</h3>
+                    <div class="hero-box fixed-hero">
+                        <div class="hero-content">Đã nằm giữa</div>
+                    </div>
+                    <p class="note">Container dùng display: flex nên căn giữa hoạt động.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="debug-card">
+            <h2>Lỗi 3: Sidebar bị co lại khi content quá dài</h2>
+
+            <h3 class="label before">Trước</h3>
+            <div class="layout-demo bad-layout">
+                <aside class="sidebar">Sidebar bị co</aside>
+                <main class="content">
+                    Content rất dài không xuống dòng làm sidebar bị ép nhỏ: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...
+                </main>
+            </div>
+
+            <h3 class="label after label-spacing">Sau</h3>
+            <div class="layout-demo fixed-layout">
+                <aside class="sidebar">Sidebar 250px</aside>
+                <main class="content">
+                    Content được xử lý trong vùng còn lại, sidebar không bị co.<br>
+                    Sửa bằng: flex-shrink: 0 cho sidebar và min-width: 0 cho content.
+                </main>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

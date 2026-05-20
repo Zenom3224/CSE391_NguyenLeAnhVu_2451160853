@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fb;
+    color: #111827;
+    line-height: 1.5;
+}
+
+.page-header {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 28px 20px 24px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: 2px;
+}
+
+.page-header p {
+    margin: 4px 0 0;
+    color: #d1d5db;
+    font-size: 17px;
+}
+
+.page-wrapper {
+    max-width: 1200px;
+    margin: 36px auto 48px;
+    padding: 0 20px;
+}
+
+.debug-card {
+    margin-bottom: 34px;
+    padding: 28px 32px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 10px 10px 0 #dbe3ef;
+}
+
+.debug-card h2 {
+    margin: 0 0 4px;
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.label {
+    margin: 4px 0 14px;
+    font-size: 22px;
+}
+
+.before {
+    color: #dc2626;
+}
+
+.after {
+    color: #16a34a;
+}
+
+.card-row {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.product-card {
+    width: 160px;
+    padding: 14px;
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 14px;
+}
+
+.product-card h4 {
+    margin: 14px 0 4px;
+    font-size: 18px;
+}
+
+.product-card p {
+    margin: 0;
+    color: #374151;
+    font-size: 14px;
+}
+
+.fake-img {
+    height: 64px;
+    border-radius: 12px;
+    background: #bfdbfe;
+    color: #1e3a8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.product-card button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 9px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.short-card {
+    min-height: 240px;
+}
+
+.medium-card {
+    min-height: 280px;
+}
+
+.tall-card {
+    min-height: 320px;
+}
+
+/* Cách sửa lỗi 1: cho card thành flex column, chiều cao đều, nút dính đáy */
+.fixed-card-row .product-card {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fixed-card-row .product-card button {
+    margin-top: auto;
+}
+
+.hero-box {
+    height: 170px;
+    padding: 20px;
+    background: #fef3c7;
+    border: 2px solid #d97706;
+    border-radius: 14px;
+}
+
+.hero-content {
+    display: inline-block;
+    padding: 10px 24px;
+    background: white;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+/* Lỗi: chỉ có display flex nhưng chưa căn giữa */
+.bad-hero {
+    display: flex;
+}
+
+/* Cách sửa lỗi 2: căn giữa theo cả trục ngang và trục dọc */
+.fixed-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note {
+    margin: 12px 0 0;
+    color: #4b5563;
+}
+
+.layout-demo {
+    display: flex;
+    min-height: 92px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    padding: 26px 14px;
+    background: #e5e7eb;
+    font-weight: 700;
+}
+
+.content {
+    flex: 1;
+    padding: 24px 18px;
+    background: #dbeafe;
+    color: #1f2937;
+}
+
+/* Lỗi: sidebar được phép co lại khi content quá dài */
+.bad-layout .sidebar {
+    width: 135px;
+    flex-shrink: 1;
+}
+
+.bad-layout .content {
+    white-space: nowrap;
+}
+
+.label-spacing {
+    margin-top: 28px;
+}
+
+/* Cách sửa lỗi 3: khóa sidebar, cho content xử lý phần chữ dài */
+.fixed-layout .sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.fixed-layout .content {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.file-note {
+    margin: 24px 0 0;
+    color: #6b7280;
+    font-size: 16px;
+}
+
+@media (max-width: 900px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .card-row {
+        flex-wrap: wrap;
+    }
+}
