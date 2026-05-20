@@ -1,0 +1,58 @@
+.page-header {
+    background: $primary-color;
+    color: $white;
+    padding: $spacing-md;
+
+    .nav {
+        @include flex-center;
+        gap: $spacing-md;
+
+        a {
+            color: $white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.card {
+    background: $white;
+    border-radius: $radius;
+    padding: $spacing-md;
+    @include card-shadow;
+
+    .card-image {
+        width: 100%;
+        border-radius: $radius;
+    }
+
+    .card-title {
+        color: $primary-color;
+        margin: $spacing-sm 0;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+    }
+
+    &.featured {
+        border: 2px solid $secondary-color;
+    }
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

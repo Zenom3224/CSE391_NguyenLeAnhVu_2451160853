@@ -1,0 +1,18 @@
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $font-primary;
+    background: $light-bg;
+    color: $text-color;
+}
+
+.main-content {
+    padding: $spacing-lg;
+}
