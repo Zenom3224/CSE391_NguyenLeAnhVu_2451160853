@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid E-Commerce Layout</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+    <div class="page-grid">
+        <header class="site-header">
+            <h1>GridCommerce</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero-banner">
+            <div class="hero-text">
+                <span>Big Sale</span>
+                <h2>Trang E-Commerce dùng CSS Grid</h2>
+                <p>Header, hero, sidebar, main content, ads và footer được chia bằng grid-template-areas.</p>
+            </div>
+            <div class="featured-card">
+                <strong>Sản phẩm nổi bật</strong>
+                <p>Giảm giá đến 40%</p>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Bộ lọc</h3>
+            <label><input type="checkbox"> Điện thoại</label>
+            <label><input type="checkbox"> Laptop</label>
+            <label><input type="checkbox"> Phụ kiện</label>
+            <label><input type="checkbox"> Đang giảm giá</label>
+        </aside>
+
+        <main class="main-content">
+            <h2>Sản phẩm mới</h2>
+            <div class="products-grid">
+                <article class="product-card"><div>01</div><h3>Phone A</h3><p>12.990.000đ</p></article>
+                <article class="product-card"><div>02</div><h3>Laptop B</h3><p>19.990.000đ</p></article>
+                <article class="product-card"><div>03</div><h3>Watch C</h3><p>3.490.000đ</p></article>
+                <article class="product-card"><div>04</div><h3>Keyboard D</h3><p>890.000đ</p></article>
+                <article class="product-card"><div>05</div><h3>Mouse E</h3><p>350.000đ</p></article>
+                <article class="product-card"><div>06</div><h3>Headphone F</h3><p>1.290.000đ</p></article>
+            </div>
+        </main>
+
+        <aside class="ads">
+            <h3>ADS</h3>
+            <div class="ad-box">Banner quảng cáo</div>
+            <div class="ad-box small">Free ship</div>
+        </aside>
+
+        <footer class="footer">
+            <p>&copy; 2026 GridCommerce. Layout thực hành CSS Grid.</p>
+        </footer>
+    </div>
+</body>
+</html>
