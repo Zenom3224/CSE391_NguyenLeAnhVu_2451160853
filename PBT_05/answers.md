@@ -427,25 +427,6 @@ Phân tích:
 Có thể biểu diễn responsive của trang video bằng các media query như sau:
 
 ```css
-/* Mobile: màn hình nhỏ */
-.video-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-}
-
-.sidebar {
-    display: none;
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-}
-```
-
-```css
 /* Tablet */
 @media (min-width: 768px) {
     .video-layout {
