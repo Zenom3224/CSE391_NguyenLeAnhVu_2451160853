@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <p>PBT 10 - B3</p>
+        <h1>Infinite Scroll Gallery</h1>
+        <span>Load ảnh bằng API, infinite scroll, lazy loading và lightbox</span>
+    </header>
+
+    <main>
+        <section id="status" class="status hidden"></section>
+        <section id="gallery" class="gallery"></section>
+        <div id="loadIndicator" class="load-indicator hidden">Đang tải thêm...</div>
+        <div id="loadTrigger" class="load-trigger"></div>
+    </main>
+
+    <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+        <button id="closeLightbox" aria-label="Đóng ảnh lớn">×</button>
+        <img id="lightboxImage" alt="Ảnh lớn">
+        <p id="lightboxCaption"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
