@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <section class="weather-card">
+            <div class="header">
+                <div>
+                    <p class="eyebrow">PBT 10 - B1</p>
+                    <h1>Weather App</h1>
+                    <p class="subtitle">Tra cứu thời tiết hiện tại bằng Open-Meteo API</p>
+                </div>
+                <div class="weather-icon" id="weatherIcon">☁️</div>
+            </div>
+
+            <form id="weatherForm" class="search-box">
+                <input id="cityInput" type="text" placeholder="Nhập thành phố, ví dụ Hanoi" autocomplete="off">
+                <button type="submit">Tìm</button>
+            </form>
+
+            <div id="message" class="message hidden"></div>
+            <section id="result" class="result hidden"></section>
+
+            <section class="history-box">
+                <h2>Lịch sử tìm kiếm</h2>
+                <div id="historyList" class="history-list"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
