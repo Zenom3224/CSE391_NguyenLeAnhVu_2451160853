@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBT 09 - Keyboard App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <p class="label">PBT_09 - Bài B4</p>
+            <h1>Keyboard Gallery</h1>
+            <p>Dùng phím ← →, số 1-9, Space, Escape và Ctrl+K</p>
+        </section>
+
+        <section class="gallery" aria-label="Image gallery">
+            <button id="prevBtn" aria-label="Ảnh trước">←</button>
+            <div class="image-card">
+                <img id="mainImage" alt="Ảnh trong gallery">
+                <p id="imageCaption"></p>
+            </div>
+            <button id="nextBtn" aria-label="Ảnh tiếp theo">→</button>
+        </section>
+
+        <div class="actions">
+            <button id="playBtn" aria-label="Play hoặc pause slideshow">▶ Play</button>
+            <button id="openPalette" aria-label="Mở command palette">Ctrl+K Command</button>
+            <button id="openModal" aria-label="Mở ảnh lớn">Mở ảnh lớn</button>
+        </div>
+
+        <section id="thumbs" class="thumbs" aria-label="Ảnh thu nhỏ"></section>
+    </main>
+
+    <div id="imageModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn">
+        <div class="image-modal">
+            <button id="closeImageModal" aria-label="Đóng modal">Đóng</button>
+            <img id="modalImage" alt="Ảnh lớn">
+        </div>
+    </div>
+
+    <div id="palette" class="palette-overlay" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="palette-box">
+            <input id="commandInput" type="text" placeholder="Gõ lệnh..." aria-label="Tìm command">
+            <ul id="commandList"></ul>
+        </div>
+    </div>
+</body>
+</html>
