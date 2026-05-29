@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBT 09 - Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="form-card">
+            <p class="label">PBT_09 - Bài B3</p>
+            <h1>Đăng ký tài khoản</h1>
+            <p class="desc">Validate form realtime bằng JavaScript</p>
+
+            <form id="registerForm" novalidate>
+                <div class="field">
+                    <label for="fullName">Họ tên</label>
+                    <div class="input-wrap">
+                        <input id="fullName" type="text" placeholder="Nguyễn Văn A">
+                        <span id="nameStatus" class="status">❌</span>
+                    </div>
+                    <small id="nameMsg">Tên cần từ 2 đến 50 ký tự.</small>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="email@example.com">
+                    <small id="emailMsg">Email chưa hợp lệ.</small>
+                </div>
+
+                <div class="field">
+                    <label for="password">Mật khẩu</label>
+                    <input id="password" type="password" placeholder="Nhập mật khẩu">
+                    <div class="strength">
+                        <div id="strengthBar"></div>
+                    </div>
+                    <small id="passwordMsg">Mật khẩu cần ít nhất 8 ký tự.</small>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Xác nhận mật khẩu</label>
+                    <input id="confirmPassword" type="password" placeholder="Nhập lại mật khẩu">
+                    <small id="confirmMsg">Mật khẩu xác nhận chưa khớp.</small>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Số điện thoại</label>
+                    <input id="phone" type="text" placeholder="0901-234-567" maxlength="12">
+                    <small id="phoneMsg">Số điện thoại cần có 10 chữ số.</small>
+                </div>
+
+                <button id="submitBtn" type="submit" disabled>Đăng ký</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="successModal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal">
+            <button id="closeModal" type="button">Đóng</button>
+            <h2>Đăng ký thành công!</h2>
+            <div id="successInfo"></div>
+        </div>
+    </div>
+</body>
+</html>
