@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">PBT 10 - B2</p>
+                <h1>User Directory</h1>
+                <p>CRUD với JSONPlaceholder API</p>
+            </div>
+            <button id="reloadBtn">Tải lại</button>
+        </header>
+
+        <section class="panel form-panel">
+            <h2 id="formTitle">Thêm người dùng</h2>
+            <form id="userForm">
+                <input type="hidden" id="userId">
+                <div class="grid-form">
+                    <label>Họ tên
+                        <input id="nameInput" type="text" required placeholder="Nguyễn Văn A">
+                    </label>
+                    <label>Email
+                        <input id="emailInput" type="email" required placeholder="email@example.com">
+                    </label>
+                    <label>Điện thoại
+                        <input id="phoneInput" type="text" required placeholder="0901234567">
+                    </label>
+                    <label>Công ty
+                        <input id="companyInput" type="text" required placeholder="ABC Company">
+                    </label>
+                </div>
+                <div class="actions">
+                    <button type="submit" id="saveBtn">Lưu user</button>
+                    <button type="button" id="cancelBtn" class="secondary">Hủy sửa</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="toolbar">
+            <input id="searchInput" type="search" placeholder="Tìm theo tên hoặc email...">
+        </section>
+
+        <div id="toast" class="toast hidden"></div>
+        <section id="usersContainer" class="users-grid"></section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
