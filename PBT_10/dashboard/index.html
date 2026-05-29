@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi API Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">PBT 10 - B4</p>
+                <h1>Multi-API Dashboard</h1>
+                <span>Gọi song song nhiều API bằng Promise.allSettled()</span>
+            </div>
+            <button id="refreshBtn">Refresh All</button>
+        </header>
+
+        <section id="summary" class="summary">Chưa tải dữ liệu.</section>
+
+        <section class="widgets">
+            <article class="widget" data-widget="users">
+                <h2>Users API</h2>
+                <div class="widget-content">Đang chờ...</div>
+            </article>
+            <article class="widget" data-widget="weather">
+                <h2>Weather API</h2>
+                <div class="widget-content">Đang chờ...</div>
+            </article>
+            <article class="widget" data-widget="country">
+                <h2>Country API</h2>
+                <div class="widget-content">Đang chờ...</div>
+            </article>
+            <article class="widget" data-widget="dog">
+                <h2>Dog API</h2>
+                <div class="widget-content">Đang chờ...</div>
+            </article>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
