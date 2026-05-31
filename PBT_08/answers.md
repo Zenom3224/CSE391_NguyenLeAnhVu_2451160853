@@ -201,6 +201,27 @@ console.log(product.specs.ram);        // 16
 
 Kết quả là `16` vì spread object chỉ copy nông. Thuộc tính `specs` là object lồng bên trong nên `copy.specs` và `product.specs` vẫn cùng tham chiếu tới một object.
 
+
+## PHẦN B - MINH CHỨNG KẾT QUẢ THỰC HÀNH
+
+### Bài B1 - Quản lý Sản phẩm E-Commerce
+
+Kết quả chạy file `product_manager.js`:
+
+![Kết quả Product Manager](screenshots/01_product_manager.png)
+
+### Bài B2 - Giỏ hàng Shopping Cart
+
+Kết quả chạy file `shopping_cart.js`:
+
+![Kết quả Shopping Cart](screenshots/02_shopping_cart.png)
+
+### Bài B3 - Higher-Order Functions Challenge
+
+Kết quả chạy file `higher_order.js`:
+
+![Kết quả Higher Order Functions](screenshots/03_higher_order.png)
+
 ---
 
 ## PHẦN C - SUY LUẬN
