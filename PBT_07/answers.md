@@ -1,5 +1,10 @@
 # PBT_07 - JavaScript Basics
 
+**Họ tên:** Nguyễn Thế Luân  
+**Quê quán:** Bắc Ninh
+
+---
+
 ## PHẦN A - KIỂM TRA ĐỌC HIỂU
 
 ### Câu A1 - var / let / const
@@ -17,7 +22,7 @@ Kết quả dự đoán:
 undefined
 ```
 
-Kết quả này xảy ra vì biến khai báo bằng `var` có hoisting. Biến `x` được đưa lên đầu phạm vi nhưng giá trị `5` chưa được gán trước khi `console.log(x)` chạy.
+Biến khai báo bằng `var` có hoisting. Biến được đưa lên đầu phạm vi nhưng giá trị chưa được gán, nên khi in ra trước dòng gán thì kết quả là `undefined`.
 
 #### Đoạn 2
 
@@ -32,7 +37,7 @@ Kết quả dự đoán:
 ReferenceError
 ```
 
-Biến `y` được khai báo bằng `let`, nên không thể sử dụng trước khi khai báo. Vùng từ đầu block đến dòng khai báo được gọi là Temporal Dead Zone.
+Biến khai báo bằng `let` không được sử dụng trước khi khai báo. Vùng trước dòng khai báo là Temporal Dead Zone.
 
 #### Đoạn 3
 
@@ -48,7 +53,7 @@ Kết quả dự đoán:
 TypeError
 ```
 
-Biến khai báo bằng `const` không thể bị gán lại giá trị mới. Vì vậy dòng `z = 20` gây lỗi.
+Biến `const` không thể gán lại giá trị mới. Vì vậy dòng `z = 20` gây lỗi.
 
 #### Đoạn 4
 
@@ -64,7 +69,7 @@ Kết quả dự đoán:
 [1, 2, 3, 4]
 ```
 
-Mảng khai báo bằng `const` không được gán sang mảng khác, nhưng vẫn có thể thay đổi nội dung bên trong mảng.
+`const` không cho gán lại biến sang mảng khác, nhưng vẫn có thể thay đổi nội dung bên trong mảng.
 
 #### Đoạn 5
 
@@ -84,7 +89,11 @@ Trong block: 2
 Ngoài block: 1
 ```
 
-Biến `a` bên trong block và biến `a` bên ngoài block là hai biến khác nhau vì `let` có phạm vi theo block.
+Biến `a` trong block và ngoài block là hai biến khác nhau vì `let` có phạm vi theo block.
+
+Kết quả kiểm chứng:
+
+![Kết quả chạy var let const](screenshots/01_var_let_const.png)
 
 ---
 
@@ -100,18 +109,18 @@ console.log("5" * "3");                // 15
 console.log(true + true);              // 2
 console.log([] + []);                  // ""
 console.log([] + {});                  // "[object Object]"
-console.log({} + []);                  // "[object Object]"
+console.log({} + []);                  // "[object Object]" hoặc 0 tùy môi trường chạy
 ```
 
-`typeof null` trả về `object` là một lỗi lịch sử của JavaScript. `NaN` có kiểu dữ liệu là `number` vì nó biểu diễn một giá trị số không hợp lệ.
+`typeof null` trả về `object` là một điểm đặc biệt lịch sử của JavaScript. `NaN` là một giá trị số không hợp lệ nên `typeof NaN` là `number`.
 
-`"5" + 3` cho kết quả `"53"` vì toán tử `+` có thể dùng để nối chuỗi. Khi có chuỗi, JavaScript chuyển số `3` thành chuỗi rồi nối lại.
+`"5" + 3` cho ra `"53"` vì toán tử `+` có thể dùng để nối chuỗi. Khi có chuỗi, JavaScript chuyển `3` thành chuỗi rồi nối lại.
 
-`"5" - 3` cho kết quả `2` vì toán tử `-` chỉ dùng cho phép toán số học. JavaScript tự chuyển chuỗi `"5"` thành số `5` rồi thực hiện phép trừ.
+`"5" - 3` cho ra `2` vì toán tử `-` chỉ dùng cho phép toán số học. JavaScript tự ép chuỗi `"5"` thành số `5` rồi trừ đi `3`.
 
 ---
 
-### Câu A3 - So sánh == và ===
+### Câu A3 - So sánh `==` và `===`
 
 ```javascript
 console.log(5 == "5");                // true
@@ -126,13 +135,13 @@ console.log("" == false);             // true
 
 Từ giờ nên dùng `===` thay vì `==`.
 
-Lý do là `===` so sánh cả giá trị và kiểu dữ liệu, giúp kết quả rõ ràng hơn. Còn `==` có ép kiểu ngầm nên đôi khi tạo ra kết quả khó đoán.
+Lý do là `===` so sánh cả giá trị và kiểu dữ liệu, kết quả rõ ràng hơn. `==` có ép kiểu ngầm nên dễ tạo ra kết quả khó đoán.
 
 ---
 
 ### Câu A4 - Truthy & Falsy
 
-Các giá trị Falsy trong JavaScript gồm:
+Các giá trị falsy trong JavaScript gồm:
 
 ```text
 false
@@ -168,7 +177,7 @@ G
 H
 ```
 
-Chuỗi `"0"` là truthy vì nó không phải chuỗi rỗng. Chuỗi `" "` cũng là truthy vì có chứa dấu cách. Mảng rỗng `[]` và object rỗng `{}` cũng là truthy.
+Chuỗi `"0"` và chuỗi có dấu cách `" "` là truthy vì không phải chuỗi rỗng. Mảng rỗng và object rỗng cũng là truthy.
 
 ---
 
@@ -199,6 +208,34 @@ var html = `
 
 ---
 
+## PHẦN B - MINH CHỨNG CHẠY CODE
+
+### Bài B1 - Máy tính đơn giản
+
+Kết quả chạy file `calculator.js`:
+
+![Kết quả calculator](screenshots/02_calculator.png)
+
+### Bài B2 - Xử lý dữ liệu sinh viên
+
+Kết quả chạy file `student_data.js`:
+
+![Kết quả xử lý dữ liệu sinh viên](screenshots/03_student_data.png)
+
+### Bài B3 - Mini Game đoán số
+
+Giao diện mở file `guess_number.html` trên trình duyệt:
+
+![Giao diện mini game đoán số](screenshots/04_guess_number.png)
+
+### Bài B4 - FizzBuzz nâng cao
+
+Kết quả chạy file `fizzbuzz.js`:
+
+![Kết quả FizzBuzz](screenshots/05_fizzbuzz.png)
+
+---
+
 ## PHẦN C - SUY LUẬN
 
 ### Câu C1 - Debug JavaScript
@@ -208,11 +245,11 @@ Các lỗi trong đoạn code:
 1. Dòng `if (giaSauGiam = 0)` dùng phép gán `=` thay vì phép so sánh.
 2. Hàm chưa kiểm tra `giaBan` có phải là số hay không.
 3. Hàm chưa kiểm tra `phanTramGiam` có phải là số hay không.
-4. Giá bán không nên là số âm hoặc bằng 0.
-5. Dùng `var` trong vòng lặp kết hợp với `setTimeout` làm cho kết quả in ra bị sai.
-6. Nên dùng `let` hoặc `const` thay cho `var` để tránh lỗi liên quan đến phạm vi biến.
-7. Test truyền `"100000"` là chuỗi, nên cần truyền số `100000` hoặc kiểm tra kiểu dữ liệu trước khi tính.
-8. Code thiếu dấu chấm phẩy ở nhiều dòng, tuy JavaScript vẫn chạy nhưng nên viết đầy đủ để rõ ràng hơn.
+4. Giá bán nên lớn hơn 0, không nên cho phép giá âm hoặc bằng 0.
+5. Test truyền `"100000"` là chuỗi, không phải số.
+6. Dùng `var` trong vòng lặp với `setTimeout` làm các lần in dùng chung một biến `i`.
+7. Nên dùng `const` cho các biến không gán lại như `giamGia`, `giaSauGiam`.
+8. Nên thêm dấu chấm phẩy để code rõ ràng hơn.
 
 Code đã sửa:
 
@@ -253,6 +290,12 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-Lỗi ẩn trong vòng lặp nằm ở biến `i` khi khai báo bằng `var`. `var` có phạm vi function scope nên các lần lặp dùng chung một biến `i`. Khi `setTimeout` chạy, vòng lặp đã kết thúc và `i` bằng 5, nên kết quả có thể in ra `Item 5` nhiều lần.
+Lỗi ẩn trong vòng lặp là do `var` có phạm vi function scope. Khi `setTimeout` chạy, vòng lặp đã kết thúc và biến `i` có giá trị cuối cùng là 5, nên có thể in ra `Item 5` nhiều lần. Khi đổi sang `let`, mỗi vòng lặp có một biến `i` riêng theo block scope nên kết quả in đúng từ `Item 0` đến `Item 4`.
 
-Khi sửa thành `let i`, mỗi vòng lặp có một biến `i` riêng theo block scope, nên kết quả in ra đúng từ `Item 0` đến `Item 4`.
+### Câu C2 - Bài toán thực tế
+
+Chương trình tính hóa đơn nhà hàng đã được viết trong file `restaurant_bill.js`.
+
+Kết quả chạy chương trình:
+
+![Kết quả hóa đơn nhà hàng](screenshots/06_restaurant_bill.png)
