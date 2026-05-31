@@ -120,6 +120,49 @@ Output khi có `stopPropagation()`:
 BUTTON
 ```
 
+
+## PHẦN B - MINH CHỨNG KẾT QUẢ THỰC HÀNH
+
+### Bài B1 - Todo App hoàn chỉnh
+
+Giao diện chính của Todo App sau khi thêm danh sách công việc:
+
+![Todo App giao diện chính](screenshots/01_todo_app_main.png)
+
+Kết quả khi lọc công việc đã hoàn thành:
+
+![Todo App completed filter](screenshots/02_todo_app_completed_filter.png)
+
+### Bài B2 - Interactive Product Catalog
+
+Kết quả tìm kiếm sản phẩm và mở modal chi tiết:
+
+![Product Catalog search và modal](screenshots/03_product_catalog_search_modal.png)
+
+Kết quả dark mode và lọc danh mục sản phẩm:
+
+![Product Catalog dark mode và filter](screenshots/04_product_catalog_dark_filter.png)
+
+### Bài B3 - Form Validator
+
+Kết quả validate form khi dữ liệu chưa hợp lệ:
+
+![Form Validator dữ liệu chưa hợp lệ](screenshots/05_form_validator_invalid.png)
+
+Kết quả submit form thành công:
+
+![Form Validator submit thành công](screenshots/06_form_validator_success.png)
+
+### Bài B4 - Keyboard Shortcuts & Accessibility
+
+Giao diện gallery ảnh và điều hướng bằng bàn phím:
+
+![Keyboard App gallery](screenshots/07_keyboard_gallery_main.png)
+
+Giao diện command palette khi bấm `Ctrl + K`:
+
+![Keyboard App command palette](screenshots/08_keyboard_command_palette.png)
+
 ---
 
 ## PHẦN C - DEBUG & PHÂN TÍCH
@@ -238,3 +281,4 @@ document.body.appendChild(fragment);
 ```
 
 `DocumentFragment` giống như một vùng chứa tạm thời trong bộ nhớ. Ta thêm 1000 phần tử vào fragment trước, sau đó mới append fragment vào DOM một lần. Vì vậy trình duyệt chỉ cần cập nhật DOM chính một lần, hiệu năng tốt hơn.
+```
