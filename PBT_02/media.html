@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Nguyễn Lê Anh Vũ</title>
+    <style>
+:root {
+    --bg: #07111f;
+    --panel: #0d1b2f;
+    --panel-soft: #132541;
+    --cyan: #22d3ee;
+    --blue: #2563eb;
+    --violet: #8b5cf6;
+    --orange: #fb923c;
+    --text: #e5f2ff;
+    --muted: #9fb3c8;
+    --line: rgba(148, 163, 184, .25);
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, .18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, .18), transparent 35%),
+        var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+header {
+    padding: 28px 8%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, .38), rgba(139, 92, 246, .25));
+    border-bottom: 1px solid var(--line);
+}
+nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+nav a { color: var(--text); text-decoration: none; font-weight: 700; }
+nav a:hover { color: var(--cyan); }
+.logo { margin-right: auto; font-size: 22px; font-weight: 800; letter-spacing: .5px; }
+main { width: min(1120px, 92%); margin: 32px auto; }
+.hero, .card, fieldset, section.panel {
+    background: rgba(13, 27, 47, .82);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.25);
+}
+.hero { padding: 32px; margin-bottom: 24px; }
+h1, h2, h3 { line-height: 1.2; }
+h1 { margin: 0 0 8px; font-size: clamp(30px, 5vw, 52px); }
+h2 { margin-top: 0; color: #f8fbff; }
+.lead { color: var(--muted); max-width: 760px; }
+.grid { display: grid; gap: 20px; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card, section.panel { padding: 22px; }
+label { display: block; font-weight: 700; margin: 12px 0 6px; }
+input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, .35);
+    background: rgba(7, 17, 31, .9);
+    color: var(--text);
+    outline: none;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(34, 211, 238, .18); }
+input:invalid:not(:placeholder-shown) { border-color: var(--danger); }
+.form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+fieldset { margin: 20px 0; padding: 20px; }
+legend { color: var(--cyan); font-weight: 800; padding: 0 8px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+button, .btn {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 20px;
+    font-weight: 800;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--cyan), var(--blue));
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+button[type="reset"], .btn.secondary { background: var(--panel-soft); color: var(--text); border: 1px solid var(--line); }
+table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 14px; }
+th, td { padding: 14px; border-bottom: 1px solid var(--line); text-align: left; }
+th { background: rgba(37, 99, 235, .28); color: white; }
+tfoot td { font-weight: 800; color: var(--cyan); }
+.notice { padding: 14px 16px; border-radius: 14px; background: rgba(34, 211, 238, .1); border: 1px solid rgba(34, 211, 238, .28); color: var(--text); }
+footer { text-align: center; padding: 26px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 44px; }
+.figure-card figure { margin: 0; }
+.figure-card img { width: 100%; height: auto; border-radius: 16px; display: block; background: #0f172a; }
+figcaption { color: var(--muted); margin-top: 10px; }
+.radio-line, .check-line { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+.radio-line input, .check-line input { width: auto; }
+.badge { display:inline-block; padding: 4px 10px; border-radius: 999px; background: rgba(251,146,60,.15); color: #fed7aa; font-size: 12px; font-weight: 800; }
+@media (max-width: 640px) {
+    header { padding: 22px 5%; }
+    .logo { width: 100%; margin: 0 0 8px; }
+    main { width: 94%; }
+    .hero, .card, section.panel, fieldset { padding: 18px; }
+    th, td { padding: 10px; font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<header><nav><span class="logo">VuTech Media</span><a href="register.html">Register</a><a href="checkout.html">Checkout</a></nav></header>
+<main>
+    <section class="hero">
+        <span class="badge">PBT_02 - B2</span>
+        <h1>Trang giới thiệu sản phẩm có multimedia</h1>
+        <p class="lead">Sử dụng figure, figcaption, iframe, video, audio và SVG inline.</p>
+    </section>
+    <section class="grid grid-3">
+        <article class="card figure-card"><figure><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%2306b6d4%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%232563eb%22/%3E%3C/linearGradient%3E%3C/defs%3E%0A%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Ccircle%20cx%3D%22480%22%20cy%3D%2285%22%20r%3D%2270%22%20fill%3D%22rgba%28255%2C255%2C255%2C.18%29%22/%3E%0A%3Ccircle%20cx%3D%2292%22%20cy%3D%22318%22%20r%3D%2295%22%20fill%3D%22rgba%28255%2C255%2C255%2C.12%29%22/%3E%0A%3Crect%20x%3D%22115%22%20y%3D%22105%22%20rx%3D%2228%22%20width%3D%22370%22%20height%3D%22190%22%20fill%3D%22rgba%2815%2C23%2C42%2C.65%29%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.45%29%22/%3E%0A%3Ctext%20x%3D%22300%22%20y%3D%22195%22%20font-family%3D%22Arial%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EVu%20Phone%20X%3C/text%3E%0A%3C/svg%3E" alt="Điện thoại Vu Phone X màu xanh với màn hình lớn" loading="lazy" style="max-width:100%;height:auto;"><figcaption>Vu Phone X — màn hình lớn, pin cả ngày.</figcaption></figure></article>
+        <article class="card figure-card"><figure><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%238b5cf6%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ec4899%22/%3E%3C/linearGradient%3E%3C/defs%3E%0A%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Ccircle%20cx%3D%22480%22%20cy%3D%2285%22%20r%3D%2270%22%20fill%3D%22rgba%28255%2C255%2C255%2C.18%29%22/%3E%0A%3Ccircle%20cx%3D%2292%22%20cy%3D%22318%22%20r%3D%2295%22%20fill%3D%22rgba%28255%2C255%2C255%2C.12%29%22/%3E%0A%3Crect%20x%3D%22115%22%20y%3D%22105%22%20rx%3D%2228%22%20width%3D%22370%22%20height%3D%22190%22%20fill%3D%22rgba%2815%2C23%2C42%2C.65%29%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.45%29%22/%3E%0A%3Ctext%20x%3D%22300%22%20y%3D%22195%22%20font-family%3D%22Arial%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EVuBook%20Air%3C/text%3E%0A%3C/svg%3E" alt="Laptop VuBook Air màu tím bạc dành cho sinh viên" loading="lazy" style="max-width:100%;height:auto;"><figcaption>VuBook Air — nhẹ, mỏng, phù hợp học tập.</figcaption></figure></article>
+        <article class="card figure-card"><figure><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23f97316%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ef4444%22/%3E%3C/linearGradient%3E%3C/defs%3E%0A%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Ccircle%20cx%3D%22480%22%20cy%3D%2285%22%20r%3D%2270%22%20fill%3D%22rgba%28255%2C255%2C255%2C.18%29%22/%3E%0A%3Ccircle%20cx%3D%2292%22%20cy%3D%22318%22%20r%3D%2295%22%20fill%3D%22rgba%28255%2C255%2C255%2C.12%29%22/%3E%0A%3Crect%20x%3D%22115%22%20y%3D%22105%22%20rx%3D%2228%22%20width%3D%22370%22%20height%3D%22190%22%20fill%3D%22rgba%2815%2C23%2C42%2C.65%29%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.45%29%22/%3E%0A%3Ctext%20x%3D%22300%22%20y%3D%22195%22%20font-family%3D%22Arial%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EVuPods%20Lite%3C/text%3E%0A%3C/svg%3E" alt="Tai nghe VuPods Lite màu cam đỏ chống ồn cơ bản" loading="lazy" style="max-width:100%;height:auto;"><figcaption>VuPods Lite — tai nghe không dây nhỏ gọn.</figcaption></figure></article>
+    </section>
+    <section class="panel" style="margin-top:20px;">
+        <h2>Video YouTube giới thiệu</h2>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video giới thiệu sản phẩm VuTech" frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </section>
+    <section class="grid grid-2" style="margin-top:20px;">
+        <article class="card">
+            <h2>Video HTML5</h2>
+            <video controls width="100%" poster="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%230ea5e9%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22/%3E%3C/linearGradient%3E%3C/defs%3E%0A%3Crect%20width%3D%22600%22%20height%3D%22400%22%20fill%3D%22url%28%23g%29%22/%3E%0A%3Ccircle%20cx%3D%22480%22%20cy%3D%2285%22%20r%3D%2270%22%20fill%3D%22rgba%28255%2C255%2C255%2C.18%29%22/%3E%0A%3Ccircle%20cx%3D%2292%22%20cy%3D%22318%22%20r%3D%2295%22%20fill%3D%22rgba%28255%2C255%2C255%2C.12%29%22/%3E%0A%3Crect%20x%3D%22115%22%20y%3D%22105%22%20rx%3D%2228%22%20width%3D%22370%22%20height%3D%22190%22%20fill%3D%22rgba%2815%2C23%2C42%2C.65%29%22%20stroke%3D%22rgba%28255%2C255%2C255%2C.45%29%22/%3E%0A%3Ctext%20x%3D%22300%22%20y%3D%22195%22%20font-family%3D%22Arial%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EVideo%20Review%3C/text%3E%0A%3C/svg%3E" preload="metadata">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                <p>Trình duyệt không hỗ trợ video. <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">Tải video</a></p>
+            </video>
+        </article>
+        <article class="card">
+            <h2>Audio HTML5</h2>
+            <audio controls style="width:100%;">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                <source src="audio-demo.ogg" type="audio/ogg">
+            </audio>
+            <h3>Logo SVG inline</h3>
+            <svg width="170" height="90" viewBox="0 0 170 90" role="img" aria-label="Logo VuTech dạng SVG">
+                <rect x="5" y="10" width="160" height="70" rx="18" fill="#0ea5e9"></rect>
+                <circle cx="48" cy="45" r="22" fill="#f97316"></circle>
+                <text x="83" y="52" font-size="23" font-family="Arial" font-weight="700" fill="white">VuTech</text>
+            </svg>
+        </article>
+    </section>
+</main>
+<footer>Multimedia page - Nguyễn Lê Anh Vũ</footer>
+
+</body>
+</html>
