@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Nguyễn Lê Anh Vũ</title>
+    <style>
+:root {
+    --bg: #07111f;
+    --panel: #0d1b2f;
+    --panel-soft: #132541;
+    --cyan: #22d3ee;
+    --blue: #2563eb;
+    --violet: #8b5cf6;
+    --orange: #fb923c;
+    --text: #e5f2ff;
+    --muted: #9fb3c8;
+    --line: rgba(148, 163, 184, .25);
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, .18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, .18), transparent 35%),
+        var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+header {
+    padding: 28px 8%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, .38), rgba(139, 92, 246, .25));
+    border-bottom: 1px solid var(--line);
+}
+nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+nav a { color: var(--text); text-decoration: none; font-weight: 700; }
+nav a:hover { color: var(--cyan); }
+.logo { margin-right: auto; font-size: 22px; font-weight: 800; letter-spacing: .5px; }
+main { width: min(1120px, 92%); margin: 32px auto; }
+.hero, .card, fieldset, section.panel {
+    background: rgba(13, 27, 47, .82);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.25);
+}
+.hero { padding: 32px; margin-bottom: 24px; }
+h1, h2, h3 { line-height: 1.2; }
+h1 { margin: 0 0 8px; font-size: clamp(30px, 5vw, 52px); }
+h2 { margin-top: 0; color: #f8fbff; }
+.lead { color: var(--muted); max-width: 760px; }
+.grid { display: grid; gap: 20px; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card, section.panel { padding: 22px; }
+label { display: block; font-weight: 700; margin: 12px 0 6px; }
+input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, .35);
+    background: rgba(7, 17, 31, .9);
+    color: var(--text);
+    outline: none;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(34, 211, 238, .18); }
+input:invalid:not(:placeholder-shown) { border-color: var(--danger); }
+.form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+fieldset { margin: 20px 0; padding: 20px; }
+legend { color: var(--cyan); font-weight: 800; padding: 0 8px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+button, .btn {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 20px;
+    font-weight: 800;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--cyan), var(--blue));
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+button[type="reset"], .btn.secondary { background: var(--panel-soft); color: var(--text); border: 1px solid var(--line); }
+table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 14px; }
+th, td { padding: 14px; border-bottom: 1px solid var(--line); text-align: left; }
+th { background: rgba(37, 99, 235, .28); color: white; }
+tfoot td { font-weight: 800; color: var(--cyan); }
+.notice { padding: 14px 16px; border-radius: 14px; background: rgba(34, 211, 238, .1); border: 1px solid rgba(34, 211, 238, .28); color: var(--text); }
+footer { text-align: center; padding: 26px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 44px; }
+.figure-card figure { margin: 0; }
+.figure-card img { width: 100%; height: auto; border-radius: 16px; display: block; background: #0f172a; }
+figcaption { color: var(--muted); margin-top: 10px; }
+.radio-line, .check-line { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+.radio-line input, .check-line input { width: auto; }
+.badge { display:inline-block; padding: 4px 10px; border-radius: 999px; background: rgba(251,146,60,.15); color: #fed7aa; font-size: 12px; font-weight: 800; }
+@media (max-width: 640px) {
+    header { padding: 22px 5%; }
+    .logo { width: 100%; margin: 0 0 8px; }
+    main { width: 94%; }
+    .hero, .card, section.panel, fieldset { padding: 18px; }
+    th, td { padding: 10px; font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<header><nav><span class="logo">VuTech Checkout</span><a href="register.html">Đăng ký</a><a href="media.html">Media</a></nav></header>
+<main>
+    <section class="hero">
+        <span class="badge">PBT_02 - B3</span>
+        <h1>Form đặt hàng hoàn chỉnh</h1>
+        <p class="lead">Bảng giỏ hàng, form thanh toán, thông tin giao hàng và các thẻ nâng cao như datalist, output, meter.</p>
+    </section>
+    <section class="panel">
+        <h2>Giỏ hàng</h2>
+        <table>
+            <thead><tr><th>STT</th><th>Sản phẩm</th><th>Đơn giá</th><th>Số lượng</th><th>Thành tiền</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Vu Phone X</td><td>12.990.000đ</td><td>1</td><td>12.990.000đ</td></tr>
+                <tr><td>2</td><td>VuPods Lite</td><td>1.290.000đ</td><td>2</td><td>2.580.000đ</td></tr>
+                <tr><td>3</td><td>Ốp lưng chống sốc</td><td>250.000đ</td><td>1</td><td>250.000đ</td></tr>
+            </tbody>
+            <tfoot><tr><td colspan="4">Tổng cộng</td><td>15.820.000đ</td></tr></tfoot>
+        </table>
+    </section>
+    <form action="#" method="POST" class="card" style="margin-top:22px;">
+        <fieldset>
+            <legend>Thông tin thanh toán</legend>
+            <label class="radio-line" for="pay-cod"><input type="radio" id="pay-cod" name="payment" value="cod" required> Thanh toán khi nhận hàng</label>
+            <label class="radio-line" for="pay-bank"><input type="radio" id="pay-bank" name="payment" value="bank"> Chuyển khoản ngân hàng</label>
+            <label class="radio-line" for="pay-wallet"><input type="radio" id="pay-wallet" name="payment" value="wallet"> Ví điện tử</label>
+            <div class="form-row">
+                <p><label for="coupon">Mã giảm giá</label><input type="text" id="coupon" name="coupon" pattern="SALE[0-9]{4}" placeholder="SALE2026"></p>
+                <p><label for="productSearch">Tìm nhanh sản phẩm</label><input list="productList" id="productSearch" name="productSearch" placeholder="Nhập tên sản phẩm"><datalist id="productList"><option value="Vu Phone X"><option value="VuBook Air"><option value="VuPods Lite"><option value="Ốp lưng chống sốc"></datalist></p>
+            </div>
+            <p><label for="note">Ghi chú</label><textarea id="note" name="note" rows="3" placeholder="Ghi chú cho đơn hàng nếu có"></textarea></p>
+        </fieldset>
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <div class="form-row">
+                <p><label for="shipName">Người nhận</label><input type="text" id="shipName" name="shipName" required placeholder="Nguyễn Lê Anh Vũ"></p>
+                <p><label for="shipPhone">Số điện thoại</label><input type="tel" id="shipPhone" name="shipPhone" required pattern="[0-9]{10}" placeholder="0901234567"></p>
+                <p><label for="shipDate">Ngày giao hàng mong muốn</label><input type="date" id="shipDate" name="shipDate" min="2026-06-01" required placeholder="Chọn ngày giao"></p>
+                <p><label for="shipTime">Khung giờ</label><select id="shipTime" name="shipTime" required><option value="">-- Chọn khung giờ --</option><option>Sáng 8-12h</option><option>Chiều 14-18h</option><option>Tối 18-21h</option></select></p>
+            </div>
+            <p><label for="days">Thời gian giao hàng dự kiến: <output id="daysOut" for="days">3</output> ngày</label><input type="range" id="days" name="days" min="1" max="7" step="1" value="3" oninput="daysOut.value = this.value" placeholder="1 đến 7 ngày"></p>
+            <p><label for="point">Điểm tích lũy</label><meter id="point" min="0" max="100" value="65">65/100</meter></p>
+        </fieldset>
+        <div class="notice">Tổng tiền tĩnh: <output>15.820.000đ</output></div>
+        <div class="actions"><button type="submit" aria-label="Xác nhận đặt hàng">Xác nhận đặt hàng</button><button type="reset">Làm mới</button></div>
+    </form>
+</main>
+<footer>Checkout page - VuTech Market</footer>
+
+</body>
+</html>
