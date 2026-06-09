@@ -1,0 +1,298 @@
+/* Giao diện đơn giản, không làm quá đẹp để giống sản phẩm sinh viên */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eeeeee;
+  color: #111111;
+  font-size: 15px;
+}
+
+.app {
+  width: 1000px;
+  max-width: 96%;
+  margin: 20px auto;
+  background: white;
+  border: 1px solid #999999;
+  padding: 15px;
+}
+
+.header {
+  border: 1px solid #bbbbbb;
+  background: #f7f7f7;
+  padding: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-link {
+  color: blue;
+  text-decoration: underline;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0 0 5px;
+  font-size: 26px;
+}
+
+p {
+  margin: 0;
+  color: #444444;
+}
+
+.btn {
+  border: 1px solid #333333;
+  padding: 7px 12px;
+  cursor: pointer;
+  border-radius: 0;
+  background: #dddddd;
+  color: #000000;
+  font-weight: normal;
+}
+
+.btn:hover {
+  background: #cccccc;
+}
+
+.btn-primary {
+  background: #2d6cdf;
+  color: white;
+}
+
+.btn-light {
+  background: #eeeeee;
+  color: #000000;
+}
+
+.btn-warning {
+  background: #ffcc66;
+  color: #000000;
+}
+
+.btn-danger {
+  background: #e35d5d;
+  color: #ffffff;
+}
+
+.summary {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.summary-card {
+  flex: 1;
+  border: 1px solid #aaaaaa;
+  background: #fafafa;
+  padding: 10px;
+}
+
+.summary-card span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.summary-card strong {
+  font-size: 24px;
+  color: #000000;
+}
+
+.message {
+  border: 1px solid #777777;
+  background: #ffffcc;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.message.hidden {
+  display: none;
+}
+
+.task-list {
+  display: block;
+}
+
+.task-card {
+  border: 1px solid #999999;
+  background: #ffffff;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.task-card.completed {
+  background: #eeeeee;
+  color: #555555;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.task-title {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.task-meta {
+  margin-top: 10px;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid #888888;
+  background: #eeeeee;
+  padding: 3px 7px;
+  margin-right: 5px;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.badge.gray {
+  background: #dddddd;
+}
+
+.action-group {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.status-line {
+  display: block;
+  margin-top: 10px;
+}
+
+.empty-box {
+  border: 1px solid #999999;
+  background: #fafafa;
+  padding: 20px;
+  text-align: center;
+  color: #555555;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: 600px;
+  max-width: 96%;
+  background: #ffffff;
+  border: 2px solid #333333;
+  padding: 15px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #aaaaaa;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.icon-btn {
+  border: 1px solid #333333;
+  background: #eeeeee;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #777777;
+  border-radius: 0;
+  font-family: Arial, sans-serif;
+}
+
+.checkbox-line {
+  display: block;
+  margin-top: 8px;
+}
+
+.error {
+  display: block;
+  min-height: 17px;
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.form-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 700px) {
+  .header,
+  .task-top {
+    display: block;
+  }
+
+  .header .btn,
+  .action-group {
+    margin-top: 10px;
+  }
+
+  .summary {
+    display: block;
+  }
+
+  .summary-card {
+    margin-bottom: 8px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

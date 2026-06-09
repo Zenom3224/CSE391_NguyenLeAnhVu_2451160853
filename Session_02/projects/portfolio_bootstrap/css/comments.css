@@ -1,0 +1,45 @@
+/* Exercise 2.3 — Comment Section UI */
+.comment img.rounded-circle {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.comment.reply img.rounded-circle {
+    width: 40px;
+    height: 40px;
+}
+
+.comment.reply {
+    border-left: 3px solid #e2e8f0;
+    padding-left: 1rem;
+}
+
+.comment.reply.ms-5 {
+    margin-left: 3rem;
+}
+
+.btn-link {
+    color: var(--bs-primary);
+    text-decoration: none;
+    padding-left: 0;
+}
+
+.btn-link:hover {
+    color: var(--bs-primary-hover);
+}
+
+.comments-section .comment {
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(226, 232, 240, .8);
+}
+
+.comments-section .comment.reply {
+    border-bottom: none;
+}
+
+@media (max-width: 575.98px) {
+    .comment.reply.ms-5 {
+        margin-left: 1rem !important;
+    }
+}

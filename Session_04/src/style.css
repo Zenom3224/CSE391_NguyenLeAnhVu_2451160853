@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+    background: #172033;
+    color: white;
+    padding: 18px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h1 {
+    font-size: 22px;
+    margin: 0 0 8px;
+}
+
+.sidebar p {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.nav-button {
+    width: 100%;
+    display: block;
+    text-align: left;
+    margin: 8px 0;
+    padding: 10px 12px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background: transparent;
+    color: #e5e7eb;
+}
+
+.nav-button.active {
+    background: #3498db;
+    border-color: #3498db;
+    color: white;
+}
+
+.main-content {
+    padding: 24px;
+}
+
+.tier-box {
+    max-width: 1050px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tier-title {
+    margin-top: 0;
+    color: #172033;
+}
+
+.section {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 16px 0;
+    background: #fff;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 14px;
+    background: #fafafa;
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.primary-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.danger-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.gray-btn {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.success-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.input-basic {
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    min-width: 220px;
+}
+
+.note {
+    background: #fff7d6;
+    border-left: 4px solid #f1c40f;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.good {
+    color: #17803d;
+    font-weight: bold;
+}
+
+.bad {
+    color: #d93025;
+    font-weight: bold;
+}
+
+.muted {
+    color: #64748b;
+}
+
+.code-like {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.shop-header {
+    background: #222;
+    color: white;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+}
+
+.shop-header a {
+    color: white;
+    margin-right: 12px;
+    text-decoration: none;
+}
+
+.shop-footer {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #eee;
+    text-align: center;
+}
+
+.todo-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.todo-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.todo-input-row input {
+    flex: 1;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.todo-item.done {
+    background: #f0fff4;
+}
+
+.todo-text {
+    flex: 1;
+}
+
+.todo-text.done {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.filter-row {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.filter-row button {
+    flex: 1;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.filter-row .active {
+    background: #3498db;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .app-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        height: auto;
+    }
+
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 2 - Quản lý công việc cá nhân</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <a class="back-link" href="../index.html">← Quay lại</a>
+        <h1>Quản lý công việc cá nhân</h1>
+      </div>
+      <button id="openTaskFormBtn" class="btn btn-primary">+ Thêm công việc</button>
+    </header>
+
+    <section class="summary">
+      <div class="summary-card">
+        <span>Tổng công việc</span>
+        <strong id="totalTasks">0</strong>
+      </div>
+      <div class="summary-card">
+        <span>Đã hoàn thành</span>
+        <strong id="completedTasks">0</strong>
+      </div>
+      <div class="summary-card">
+        <span>Chưa hoàn thành</span>
+        <strong id="pendingTasks">0</strong>
+      </div>
+    </section>
+
+    <div id="messageBox" class="message hidden"></div>
+
+    <section id="taskList" class="task-list">
+      <!-- Danh sách công việc được render bằng JavaScript -->
+    </section>
+  </div>
+
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="formTitle">Thêm công việc</h2>
+        <button id="closeTaskFormBtn" class="icon-btn" type="button">×</button>
+      </div>
+
+      <form id="taskForm" novalidate>
+        <div class="form-group">
+          <label for="taskTitle">Tiêu đề công việc</label>
+          <input id="taskTitle" type="text" placeholder="VD: Hoàn thành bài DOM">
+          <small class="error" id="taskTitleError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="taskDescription">Mô tả ngắn</label>
+          <textarea id="taskDescription" rows="4" placeholder="Nhập mô tả ngắn cho công việc"></textarea>
+          <small class="error" id="taskDescriptionError"></small>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="taskDeadline">Hạn hoàn thành</label>
+            <input id="taskDeadline" type="date">
+            <small class="error" id="taskDeadlineError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="taskPriority">Mức ưu tiên</label>
+            <select id="taskPriority">
+              <option value="Thấp">Thấp</option>
+              <option value="Trung bình">Trung bình</option>
+              <option value="Cao">Cao</option>
+            </select>
+            <small class="error" id="taskPriorityError"></small>
+          </div>
+        </div>
+
+        <label class="checkbox-line">
+          <input id="taskCompleted" type="checkbox">
+          Đánh dấu đã hoàn thành
+        </label>
+
+        <div class="form-actions">
+          <button id="cancelTaskFormBtn" class="btn btn-light" type="button">Hủy</button>
+          <button id="submitTaskBtn" class="btn btn-primary" type="submit">Lưu công việc</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* Exercise 2.2 — Blog Layout + Sidebar */
+.blog-page-hero {
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+    background: #fff;
+}
+
+.blog-post-card {
+    overflow: hidden;
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--custom-shadow-hover);
+}
+
+.blog-post-card .card-img-top {
+    height: 280px;
+    object-fit: cover;
+}
+
+.blog-post-card .card-title {
+    font-size: clamp(1.45rem, 2vw, 2rem);
+}
+
+.sidebar-card .list-group-item {
+    border-color: var(--custom-slate-200);
+}
+
+.sidebar-card h5 {
+    font-size: 1rem;
+}
+
+.recent-post-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.tag-cloud .badge {
+    border-radius: 999px;
+    padding: .55rem .75rem;
+    font-weight: 500;
+}
+
+/* Sticky sidebar: only sticky on desktop, below sticky header */
+@media (min-width: 992px) {
+    #blog .sticky-top {
+        position: sticky;
+        top: 100px;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 991.98px) {
+    #blog .sticky-top {
+        position: static !important;
+        padding-top: 0 !important;
+    }
+
+    .blog-post-card .card-img-top {
+        height: 220px;
+    }
+}

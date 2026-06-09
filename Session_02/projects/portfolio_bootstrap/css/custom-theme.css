@@ -1,0 +1,250 @@
+/* =====================================================
+   Exercise 2.4 — Custom Bootstrap Theme
+   Brand direction: teal / green + slate, minimal portfolio style
+   Color palette:
+   Teal 500  #14b8a6  Primary buttons, links
+   Teal 600  #0d9488  Primary hover
+   Teal 100  #ccfbf1  Light backgrounds
+   Slate 900 #0f172a  Headers, dark text
+   Slate 700 #334155  Body text
+   Slate 500 #64748b  Secondary text
+   Slate 200 #e2e8f0  Borders, dividers
+   Slate 50  #f8fafc  Light backgrounds
+   ===================================================== */
+
+:root {
+    /* Bootstrap color overrides */
+    --bs-primary: #14b8a6;
+    --bs-primary-hover: #0d9488;
+    --bs-primary-rgb: 20, 184, 166;
+
+    --bs-secondary: #64748b;
+    --bs-secondary-rgb: 100, 116, 139;
+
+    /* Custom colors */
+    --custom-success: #22c55e;
+    --custom-warning: #f59e0b;
+    --custom-danger: #ef4444;
+    --custom-teal-light: #ccfbf1;
+    --custom-slate-900: #0f172a;
+    --custom-slate-700: #334155;
+    --custom-slate-500: #64748b;
+    --custom-slate-200: #e2e8f0;
+    --custom-slate-50: #f8fafc;
+    --custom-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+    --custom-shadow-hover: 0 18px 40px rgba(15, 23, 42, 0.14);
+
+    /* Typography */
+    --bs-body-font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --bs-body-font-size: 1rem;
+    --bs-body-line-height: 1.6;
+
+    /* Border radius */
+    --bs-border-radius: 0.5rem;
+    --bs-border-radius-sm: 0.375rem;
+    --bs-border-radius-lg: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+    background-color: var(--custom-slate-50);
+    color: var(--custom-slate-700);
+}
+
+a {
+    color: var(--bs-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--bs-primary-hover);
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand {
+    color: var(--custom-slate-900);
+    letter-spacing: -0.03em;
+}
+
+.text-primary,
+.navbar-brand.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.bg-teal-soft {
+    background-color: var(--custom-teal-light);
+}
+
+.py-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.gap-4 {
+    gap: 2rem !important;
+}
+
+.navbar {
+    box-shadow: 0 2px 15px rgba(15, 23, 42, 0.05);
+}
+
+.navbar .nav-link {
+    color: var(--custom-slate-700);
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--bs-primary);
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--bs-primary-hover);
+    border-color: var(--bs-primary-hover);
+    color: #fff;
+}
+
+.btn-outline-primary {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary.active {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #fff;
+}
+
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--custom-shadow);
+}
+
+.card-header {
+    border-bottom-color: var(--custom-slate-200);
+    border-top-left-radius: 16px !important;
+    border-top-right-radius: 16px !important;
+}
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border-color: var(--custom-slate-200);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.16);
+}
+
+.badge.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.badge.bg-secondary {
+    background-color: var(--bs-secondary) !important;
+}
+
+.progress {
+    background-color: var(--custom-slate-200);
+    border-radius: 999px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--bs-primary), var(--bs-primary-hover));
+}
+
+.section-kicker {
+    color: var(--bs-primary);
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: .78rem;
+}
+
+.site-heading {
+    font-size: clamp(2.25rem, 6vw, 5rem);
+    line-height: .95;
+    letter-spacing: -0.065em;
+}
+
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #ccfbf1 42%, #f8fafc 100%);
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.76);
+    backdrop-filter: blur(12px);
+}
+
+.profile-illustration {
+    max-width: 360px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+}
+
+.portfolio-card {
+    overflow: hidden;
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--custom-shadow-hover);
+}
+
+.portfolio-card img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.05);
+}
+
+.footer-dark {
+    background-color: var(--custom-slate-900);
+    color: rgba(255,255,255,.82);
+}
+
+.footer-dark a {
+    color: rgba(255,255,255,.82);
+}
+
+.footer-dark a:hover {
+    color: #fff;
+}
+
+@media (max-width: 575.98px) {
+    .py-section {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+}
